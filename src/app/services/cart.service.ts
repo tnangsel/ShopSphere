@@ -83,7 +83,7 @@ export class CartService {
       'Authorization': 'Bearer ' + this.token
     });
 
-    return this.http.post<Wishlist>(this.orderURL+userId+'/add', productId, { headers });
+    return this.http.post<Wishlist>(this.wishlistURL+userId+'/add', productId, { headers });
 
   }
 
