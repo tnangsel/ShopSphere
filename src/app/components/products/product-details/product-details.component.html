@@ -1,0 +1,29 @@
+
+<!-- Shop Product Start -->
+<div class="col pb-3">
+  <div class="card product-item border-2 mb-4">
+      <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+          <img class="img-fluid w-100" src="#" alt="Product ID: {{product?.id}}">
+      </div>
+      <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+          <h6 class="text-truncate mb-3">{{ product?.title }}</h6>
+          <div class="d-flex justify-content-center">
+              <h6>$ {{ product?.price }}</h6>
+          </div>
+      </div>
+      <div class="card-footer bg-light border-1" style="padding: 0; margin-top: 0;">
+        <div class="row">
+            <div class="col col-md-12 mb-2 mt-3 ms-5">
+                <a *ngIf="!isAdmin" routerLink="/products/{{ product?.id }}" class="btn btn-primary btn-flex py-2 ms-3"><i class="fas fa-eye text-white mr-1"></i>View Detail</a>
+                
+            </div>
+            <div class="col mb-2 mt-0 ms-5">
+                <!-- <a *ngIf="!isAdmin" class="btn btn-success btn-flex py-2" (click)="itemAddToCart(productId)"><i class="fas fa-shopping-cart text-white mr-1"></i>Add To Cart</a> -->
+                <a *ngIf="isAdmin" routerLink="/admin/products/{{ product?.id }}" class="btn btn-primary btn-flex py-2"><i class="fas fa-eye text-white mr-1"></i>Update Item</a>
+                <!-- <a *ngIf="isAdmin" routerLink="/products/{{ product?.id }}" class="btn btn-danger btn-flex py-2"><i class="fas fa-shopping-cart text-white mr-1"></i>Delete Item</a> -->
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+      

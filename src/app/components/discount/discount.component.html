@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Discount Price</th>
+                <th>Discount Code</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let discount of discounts">
+                    <td>{{ discount.id }}</td>
+                    <td>{{ discount.discountPrice }}</td>
+                    <td>{{ discount.discountCode }}</td>
+                    <td><button class="btn btn-danger" (click)="confirmDeleteDiscount(discount.id)">Delete</button></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div> 
+
+<!--Generate Discount form-->
+<div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+    <div class="card p-4">
+      <h2 class="text-center mb-4">Discount Form</h2>
+      <form (ngSubmit)="createDiscount()" class="needs-validation" novalidate>
+        <div class="form-group mb-2">
+          <label for="discountPrice">Discount Price:</label>
+          <input type="number" class="form-control" min="1" id="discountPrice" name="discountPrice" [(ngModel)]="discountPrice" required>
+          <div class="invalid-feedback">Please provide a valid discount price.</div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="discountCode">Discount Code:</label>
+          <input type="text" class="form-control" id="discountCode" name="discountCode" [(ngModel)]="discountCode" required>
+          <div class="invalid-feedback">Please provide a discount code.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create Discount</button>
+      </form>
+    </div>
+</div>
+
+   

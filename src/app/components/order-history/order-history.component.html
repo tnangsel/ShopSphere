@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col">
+            <div *ngIf="orderDetails.length > 0; else emptyCart"> 
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">User and Order Information</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="col">
+                                    <div class="row">Name: {{ orderDetails[0].user.name.firstName }} {{ orderDetails[0].user.name.lastName }}</div>
+                                    <div class="row">Email: {{ orderDetails[0].user.email }}</div>
+                                    <div class="row">Phone: {{ orderDetails[0].user.address.phone}}</div>
+                                    <div class="row">Address: {{ orderDetails[0].user.address.street }},</div>
+                                    <div class="row ms-5">{{ orderDetails[0].user.address.city }} {{ orderDetails[0].user.address.zipcode }}</div>
+                                    <div class="row">Order Status: {{ orderDetails[0].status }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col">No.Items</div>
+                                    <div class="col">Product Title</div>
+                                    <div class="col">Description</div>
+                                    <div class="col">Category</div>
+                                    <div class="col">Price</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div *ngFor="let order of orderDetails">
+                                    <div class="row" *ngFor="let prod of order.products; let i = index">
+                                        <div class="col ms-2">{{ i+1}}</div>
+                                        <div class="col ms-2">{{ prod.title }}</div>
+                                        <div class="col ms-2">{{ prod.description }}</div>
+                                        <div class="col ms-2">{{ prod.category.name }}</div>
+                                        <div class="col ms-2">{{ prod.price }}</div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #emptyCart>
+                <div class="empty-order-message">
+                    <h3><i class="bi bi-cart ms-4">No records to show</i></h3> 
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>     

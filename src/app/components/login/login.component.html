@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col col-md-10">
+          <div class="card" style="background-color:rgba(100, 146, 227, 0.573)">
+              <div class="card-header" style="text-align: center;"><h4>Welcome Back</h4></div>
+              <div class="card-body mb-3"><h1></h1>
+                    <form (ngSubmit)="onLogin()">
+                        <div class="form-group mb-3">
+                          <label for="exampleInputEmail1">Username</label>
+                          <input type="email" class="form-control mt-2" aria-describedby="emailHelp" name="username" [(ngModel)]="username" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control mt-2 mb-4" name="password" [(ngModel)]="password" placeholder="Password" autocomplete>                        </div>
+                        <button type="submit" class="bg-success">Login</button>
+                        
+                        <div class="bottom-text">
+                          <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     

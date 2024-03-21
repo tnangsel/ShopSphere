@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="welcome-message">
+      <ng-container *ngFor="let letter of letters; let i = index">
+        <span *ngIf="letter !== ' '; else space" [@slideInFromRight]="i" [@slideInFromLeft]="i">{{ letter }}</span>
+        <ng-template #space>&nbsp;</ng-template>
+        </ng-container>
+    </div>
+</div>
+
+  

@@ -1,0 +1,13 @@
+#navbarCart {
+    position: relative; /* Ensure relative positioning for the parent anchor tag */
+}
+
+#navbarCart i.bi-cart2 {
+    position: relative; /* Position the <i> tag absolutely within its parent */
+    top: -10px; /* Adjust as needed to float the <i> tag up */
+    right: 2; /* Adjust as needed to position the <i> tag on the right side */
+    background-color: red; /* Set the background color to red */
+    color: white; /* Set the text color to white */
+    padding: 5px; /* Add padding to the <i> tag */
+    border-radius: 50%; /* Apply rounded border */
+}

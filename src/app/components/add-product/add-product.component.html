@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10">
+            <form *ngIf="!isUpdating" (ngSubmit)="addProduct()" class="row g-3">
+                <div class="col-md-6">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" [(ngModel)]="title" required>
+                </div>
+                <div class="col-md-6">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description" [(ngModel)]="description" required>
+                </div>
+                <div class="col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price" required>
+                </div>
+                <div class="col-md-6">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="col-md-6 me-2">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+                <button type="button" class="btn btn-outline-danger ms-2" routerLink="/products">Cancel</button> 
+                </div>
+            </form>
+
+            <form *ngIf="isUpdating" (ngSubmit)="editProduct()" class="row g-3">
+                <div class="col-md-6">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" [(ngModel)]="productDao.title" required>
+                </div>
+                <div class="col-md-6">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description" [(ngModel)]="productDao.description" required>
+                </div>
+                <div class="col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" [(ngModel)]="productDao.price" required>
+                </div>
+                <div class="col-md-6">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="productDao.category.name" required>
+                </div>
+                <div class="col-md-6 me-2">
+                    <!--Update button-->
+                    <button type="submit" class="btn btn-primary">Update Product</button>
+                    <!--Delete button-->
+                    <button *ngIf="isAdmin()" (click)="confirmDeleteProduct(productId)" class="btn btn-danger ms-2"><i class="fas fa-shopping-cart text-white mr-1"></i>Delete Item</button>
+                    <!--Cancel button-->
+                    <button type="button" class="btn btn-outline-danger ms-2" routerLink="/products">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>             

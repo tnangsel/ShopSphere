@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col col-md-10">
+          <div class="card" style="background-color:rgba(100, 146, 227, 0.573)">
+              <div class="card-header" style="text-align: center;"><h4>Registration</h4></div>
+              <div class="card-body mb-3">
+                  <form (ngSubmit)="onRegister()">
+                      <div class="row justify-content-center">
+                          <div class="form-group mb-2 col-md-5">
+                              <label for="firstName">First Name</label>
+                              <input type="text" class="form-control" id="firstName" placeholder="Enter first name" [(ngModel)]="firstName" name="firstName" required>
+                          </div>
+                          <div class="form-group mb-2 col-md-5">
+                              <label for="lastName">Last Name</label>
+                              <input type="text" class="form-control" id="lastName" placeholder="Enter last name" [(ngModel)]="lastName" name="lastName" required>
+                          </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="email" name="email" required>
+                        </div>
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="pass" name="pass" required>
+                        </div>
+                      </div>
+                      
+                      <div class="row justify-content-center">
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="phone">Phone</label>
+                          <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" [(ngModel)]="phone" name="phone" required>
+                        </div>
+                        <div class="form-group mb-2 col-md-5">
+                            <label for="street">Street</label>
+                            <input type="text" class="form-control" id="street" placeholder="Enter street" [(ngModel)]="street" name="street" required>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="city">City</label>
+                          <input type="text" class="form-control" id="city" placeholder="Enter city" [(ngModel)]="city" name="city" required>
+                        </div>
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="zipcode">ZipCode</label>
+                          <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" [(ngModel)]="zipcode" name="zipcode" required>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="form-group mb-2 col-md-5">
+                          <label for="role">Roles</label>
+                          <select class="form-control" id="role" [(ngModel)]="roles" name="roles"  required>
+                            <option value="USER">User</option>
+                            <option value="ADMIN">Admin</option>
+                          </select>
+                        </div>
+                        <div class="form-group mt-4 col-md-5">
+                          <button type="submit" class="btn btn-md btn-primary">Rgister</button>
+                        </div>
+                        <div class="form-group mt-4 col-md-5">
+                          <p class="me-auto">Already have an account? <a routerLink="/login">Login</a></p>
+                        </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> 
