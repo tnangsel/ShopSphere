@@ -64,6 +64,7 @@ export class SingleProductComponent implements OnInit{
         this.alertify.warning('Please login to shop');
       }
     }
+  
 
     itemAddToWishlist(productId: number) {
       if (this.userId !== 0) {
