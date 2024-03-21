@@ -8,15 +8,15 @@ import { Product } from 'src/app/services/interfaces/Product';
   styleUrls: ['./wishlist.component.scss']
 })
 export class WishlistComponent {
-  // public product?:Product;
+  
   public productId:number = 0;
   public userId = parseInt(localStorage.getItem('userId') || '0');
   categoryName: string = '';
 
   product:Product[] = [];
-  // cartDetails:CartDetails[] = [];
   cartItems:Cart[] = [];
-removeFromCart(arg0: any) {
 
-}
+  removeFromCart(arg0: any) {
+
+  }
 }
