@@ -76,6 +76,8 @@ export class CartComponent {
       (data:number ) => {
         // console.log(data);
         this.discountPrice = data;
+        this.totalPrice = this.subTotal + this.shippingPrice - this.discountPrice;
+
       }
     )
   }

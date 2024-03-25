@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DiscountComponent } from './components/discount/discount.component';
@@ -40,10 +39,6 @@ const routes: Routes = [
   {
     path: 'cart/:id',
     component:CartComponent
-  },
-  {
-    path: 'cart',
-    component:CartDetailComponent
   },
   {
     path: 'orders',
